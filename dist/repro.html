@@ -1,0 +1,64 @@
+<!doctype html>
+<title>lovefield deferrable</title>
+<script src="lovefield.js"></script> <!-- 2.1.8 -->
+<script>
+var lf = window.lf;
+var db = lf.schema.create('test', 1);
+
+db.createTable('ProductType')
+    .addColumn('id', lf.Type.INTEGER)
+    .addColumn('name', lf.Type.STRING)
+    .addPrimaryKey(['id']);
+
+db.createTable('Product')
+    .addColumn('id', lf.Type.INTEGER)
+    .addColumn('name', lf.Type.STRING)
+    .addColumn('product_type_id', lf.Type.INTEGER)
+    .addPrimaryKey(['id'])
+    .addForeignKey('product_type_fk', {
+      local: 'product_type_id',
+      ref: 'ProductType.id',
+      action: lf.ConstraintAction.RESTRICT,
+      timing: lf.ConstraintTiming.DEFERRABLE
+    });
+
+db.connect({storeType: lf.schema.DataStoreType.MEMORY}).then(function(db) {
+  var Product = db.getSchema().table('Product');
+  var ProductType = db.getSchema().table('ProductType');
+
+  db.createTransaction().exec([
+    db.insert().into(ProductType).values([
+      ProductType.createRow({id: 1, name: 'type 1'}),
+    ]),
+    db.insert().into(Product).values([
+      Product.createRow({
+        id: 1,
+        product_type_id: 1,
+        name: 'product 1'
+      }),
+    ]),
+  ]).then(function() {
+    return db.createTransaction().exec([
+        db.select().from(ProductType),
+        db.select().from(Product),
+    ]);
+  }).then(function(results) {
+    console.log('productType', results[0]);
+    console.log('product', results[1]);
+
+    return db.createTransaction().exec([
+      db.delete().from(ProductType),
+      db.insert().into(ProductType).values([
+        ProductType.createRow({id: 1, name: 'type 1'}),
+      ]),
+    ]);
+  });
+
+  /*db.createTransaction().exec([
+    db.delete().from(ProductType),
+    db.insert().into(ProductType).values([
+      ProductType.createRow({id: 1, name: 'type 1'}),
+    ])
+  ]);*/
+});
+</script>

@@ -1,0 +1,83 @@
+{
+  "_from": "lovefield@2.1.12",
+  "_id": "lovefield@2.1.12",
+  "_inBundle": false,
+  "_integrity": "sha1-B/ufHXhAV47HhHBsrQ++feTJP1I=",
+  "_location": "/lovefield",
+  "_phantomChildren": {
+    "underscore": "1.7.0",
+    "underscore.string": "2.4.0"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "lovefield@2.1.12",
+    "name": "lovefield",
+    "escapedName": "lovefield",
+    "rawSpec": "2.1.12",
+    "saveSpec": null,
+    "fetchSpec": "2.1.12"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/lovefield/-/lovefield-2.1.12.tgz",
+  "_shasum": "07fb9f1d7840578ec784706cad0fbe7de4c93f52",
+  "_spec": "lovefield@2.1.12",
+  "_where": "/home/sebdev20/Documents/git/dcWallet/packages/yoroi-extension",
+  "bin": {
+    "lovefield-spac": "spac/lovefield-spac"
+  },
+  "bugs": {
+    "url": "https://github.com/google/lovefield/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "js-yaml": "3.13.1",
+    "nopt": "2.2.1"
+  },
+  "deprecated": false,
+  "description": "Lovefield - A relational database for web apps",
+  "devDependencies": {
+    "chalk": "0.5.1",
+    "firebase-token-generator": "*",
+    "fs-extra": "0.30.0",
+    "glob": "3.2.6",
+    "google-closure-compiler-java": "20200504.0.0",
+    "google-closure-library": "20190618.0.0",
+    "gulp": "4.0.2",
+    "gulp-closure-compiler": "0.3.1",
+    "gulp-connect": "5.7.0",
+    "gulp-gjslint": "0.1.4",
+    "jasmine": "^2.3.2",
+    "mkdirp": "0.5.0",
+    "request": "^2.88.0",
+    "selenium-webdriver": "3.6.0",
+    "temporary": "0.0.8",
+    "toposort-class": "0.3.1"
+  },
+  "engines": {
+    "node": ">=12.16.3"
+  },
+  "files": [
+    "dist",
+    "spac/codegen.js",
+    "spac/lovefield-spac",
+    "spac/parser.js",
+    "spac/spac.js",
+    "spac/template"
+  ],
+  "homepage": "https://github.com/google/lovefield",
+  "keywords": [
+    "lovefield"
+  ],
+  "license": "Apache-2.0",
+  "main": "dist/lovefield.min.js",
+  "types": "dist/lovefield.d.ts",
+  "name": "lovefield",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/google/lovefield.git"
+  },
+  "version": "2.1.12"
+}
