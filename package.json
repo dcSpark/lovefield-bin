@@ -1,6 +1,6 @@
 {
-  "_from": "lovefield@2.1.12",
-  "_id": "lovefield@2.1.12",
+  "_from": "lovefield@2.2.0",
+  "_id": "lovefield@2.2.0",
   "_inBundle": false,
   "_integrity": "sha1-B/ufHXhAV47HhHBsrQ++feTJP1I=",
   "_location": "/lovefield",
@@ -11,19 +11,19 @@
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "lovefield@2.1.12",
+    "raw": "lovefield@2.2.0",
     "name": "lovefield",
     "escapedName": "lovefield",
-    "rawSpec": "2.1.12",
+    "rawSpec": "2.2.0",
     "saveSpec": null,
-    "fetchSpec": "2.1.12"
+    "fetchSpec": "2.2.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/lovefield/-/lovefield-2.1.12.tgz",
+  "_resolved": "https://registry.npmjs.org/lovefield/-/lovefield-2.2.0.tgz",
   "_shasum": "07fb9f1d7840578ec784706cad0fbe7de4c93f52",
-  "_spec": "lovefield@2.1.12",
+  "_spec": "lovefield@2.2.0",
   "_where": "/home/sebdev20/Documents/git/dcWallet/packages/yoroi-extension",
   "bin": {
     "lovefield-spac": "spac/lovefield-spac"
@@ -79,5 +79,5 @@
     "type": "git",
     "url": "git+https://github.com/google/lovefield.git"
   },
-  "version": "2.1.12"
+  "version": "2.2.0"
 }
