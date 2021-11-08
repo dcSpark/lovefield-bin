@@ -149,8 +149,8 @@ declare module 'lovefield' {
   
     module raw {
       export interface BackStore {
-        getRawDBInstance(): any
-        getRawTransaction(): any
+        getRawDBInstance(): IDBDatabase
+        getRawTransaction(): IDBTransaction
         dropTable(tableName: string): Promise<void>
         addTableColumn(
             tableName: string, columnName: string,
@@ -161,7 +161,7 @@ declare module 'lovefield' {
             newColumnName:string) : Promise<void>
         createRow(payload: Object): Row
         getVersion(): number
-        dump(): Array<Object>
+        dump(): Promise<{ [tableName: string]: Array<unknown> }>;
       }
     }  // module raw
   
